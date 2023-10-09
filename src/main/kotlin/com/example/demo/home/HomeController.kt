@@ -12,6 +12,6 @@ class HomeController {
         var count = 1;
         model.addAttribute("count", count)
         count += 1
-        return "demo"
+        return "homeView"
     }
 }

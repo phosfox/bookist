@@ -22,7 +22,9 @@ class TemplateConfig {
         return if ("prod" == profile) {
             TemplateEngine.createPrecompiled(ContentType.Html)
         } else {
-            val codeResolver = DirectoryCodeResolver(Path.of("src", "main", "kotlin"))
+            val path = Path.of("src", "main", "templates", "page")
+            print(path)
+            val codeResolver = DirectoryCodeResolver(path)
 
             val templateEngine =
                 TemplateEngine.create(codeResolver, Paths.get("jte-classes"), ContentType.Html, javaClass.classLoader)
